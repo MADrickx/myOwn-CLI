@@ -1,22 +1,25 @@
 #!/usr/bin/env node
 
-const validator = require('validator');
-const axios = require('axios');
-const chalk = require('chalk');
-const figlet = require('figlet');
-const { getCode, getName } = require('country-list');
 let holiYear = new Date().getFullYear();
 const api = "https://date.nager.at/api/v2/publicholidays/";
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 const error = chalk.bold.red;
+import ora from 'ora';
+import validator from 'validator';
+import axios from 'axios';
+import chalk from 'chalk';
+import figlet from 'figlet';
+import { getCode } from 'country-list';
 
 process.argv.forEach((val, index) => {
+	const spinner = ora('Loading country values ').start();
 	if (val.charAt(0) != "/") {
 		if (validator.isInt(val) && val.length == 4) {
 			if(val < new Date().getFullYear() + 20 && val > new Date().getFullYear() - 50)
 			{
 				holiYear = val;
+
 			} 
 			else 
 			{	
@@ -46,11 +49,10 @@ process.argv.forEach((val, index) => {
 
 					console.log(chalk.bold.green(data))
 				})
-				
-				console.log(chalk.bgBlack(`Here is the official public Holidays dates for ${val} in ${holiYear}`));
-				
+				console.log(chalk.bgBlack(`Here is the official public Holidays dates for ${val} in ${holiYear}`));	
 				let holidays = axios.get(`${api}${holiYear}/${code}`)
 					.then(response => {
+						spinner.succeed();
 						response.data.forEach(day => {
 							let fixed = "";
 							if (day.fixed) {
@@ -69,7 +71,8 @@ process.argv.forEach((val, index) => {
 		}
 		else 
 		{
-			console.log("No correct parameter received. Please enter 'man get-holidays' for more information.");
+			spinner.fail("No correct parameter received");
 		}
+		spinner.stop();
 	}
 });
