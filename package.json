@@ -1,0 +1,27 @@
+{
+  "name": "myown-cli",
+  "version": "1.0.0",
+  "description": "a basic CLI",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MADrickx/myOwn-CLI.git"
+  },
+  "author": "Audric Skivée",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MADrickx/myOwn-CLI/issues"
+  },
+  "homepage": "https://github.com/MADrickx/myOwn-CLI#readme",
+  "dependencies": {
+    "axios": "^0.22.0",
+    "boxen": "^6.2.0",
+    "chalk": "^4.1.2",
+    "country-list": "^2.2.0",
+    "figlet": "^1.5.2",
+    "validator": "^13.6.0"
+  }
+}
