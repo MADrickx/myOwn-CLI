@@ -61,7 +61,7 @@ process.argv.forEach((val, index) => {
 								fixed = "It's a variable date."
 							}
 							let dateHol = new Date(day.date);
-							console.log(chalk.bold.bgBlack.greenBright(`-- ${days[dateHol.getDay()]} ${dateHol.getDate()} ${months[dateHol.getMonth()]} ${dateHol.getFullYear()} --`),chalk.bold.green(day.localName) + ` (${day.name}). ${fixed} Start date : ${day.launchYear ? day.launchYear : 'undetermined'}.`);
+							console.log(chalk.bold.bgBlack.greenBright(`-- ${days[dateHol.getDay()]} ${dateHol.getDate()} ${months[dateHol.getMonth()]} ${dateHol.getFullYear()} --`),chalk.bold.green(day.localName) + ` (${day.name}). ${fixed}`);
 						})
 					}).catch(error => {
 						console.error(error);
