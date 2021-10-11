@@ -32,7 +32,7 @@ process.argv.forEach((val, index) => {
 
 			if (code == undefined) 
 			{
-				console.log("Error. Country name not correctly spelled. Any country code found.")
+				spinner.fail("Error. Country name not correctly spelled. Any country code found.")
 			} 
 			else
 			{
@@ -68,10 +68,6 @@ process.argv.forEach((val, index) => {
 					})
 			}
 
-		}
-		else 
-		{
-			spinner.fail("No correct parameter received");
 		}
 		spinner.stop();
 	}

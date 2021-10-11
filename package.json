@@ -1,6 +1,6 @@
 {
   "name": "@madrickx/myown",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "a basic CLI to get official holidays from countries",
   "main": "index.js",
   "type": "module",
