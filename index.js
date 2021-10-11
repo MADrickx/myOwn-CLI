@@ -33,8 +33,8 @@ process.argv.forEach((val, index) => {
 			} 
 			else
 			{
-				figlet('Get-Holidays', {
-					font: 'Contessa',
+				figlet('myOwn', {
+					font: 'Fender',
 					horizontalLayout: 'default',
 					verticalLayout: 'default'
 				}, function (err, data) {
@@ -44,7 +44,7 @@ process.argv.forEach((val, index) => {
 						return;
 					}
 
-					console.log(chalk.bold.blue(data))
+					console.log(chalk.bold.green(data))
 				})
 				
 				console.log(chalk.bgBlack(`Here is the official public Holidays dates for ${val} in ${holiYear}`));
@@ -59,9 +59,7 @@ process.argv.forEach((val, index) => {
 								fixed = "It's a variable date."
 							}
 							let dateHol = new Date(day.date);
-							console.log(chalk.bold.bgBlack.blueBright(`-- ${days[dateHol.getDay()]} ${dateHol.getDate()} ${months[dateHol.getMonth()]} ${dateHol.getFullYear()} --`));
-							console.log(chalk.bold.green(day.localName) + ` (${day.name}). ${fixed} Start date : ${day.launchYear ? day.launchYear : 'undetermined'}.
-							`);
+							console.log(chalk.bold.bgBlack.greenBright(`-- ${days[dateHol.getDay()]} ${dateHol.getDate()} ${months[dateHol.getMonth()]} ${dateHol.getFullYear()} --`),chalk.bold.green(day.localName) + ` (${day.name}). ${fixed} Start date : ${day.launchYear ? day.launchYear : 'undetermined'}.`);
 						})
 					}).catch(error => {
 						console.error(error);

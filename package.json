@@ -22,6 +22,7 @@
     "chalk": "^4.1.2",
     "country-list": "^2.2.0",
     "figlet": "^1.5.2",
+    "myown": "^1.2.0",
     "validator": "^13.6.0"
   },
   "devDependencies": {}
