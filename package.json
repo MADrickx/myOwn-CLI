@@ -1,7 +1,7 @@
 {
-  "name": "myown-cli",
+  "name": "@madrickx/myown",
   "version": "1.0.0",
-  "description": "a basic CLI",
+  "description": "a basic CLI to get official holidays from countries",
   "main": "index.js",
   "scripts": {
     "test": "test"
@@ -23,5 +23,6 @@
     "country-list": "^2.2.0",
     "figlet": "^1.5.2",
     "validator": "^13.6.0"
-  }
+  },
+  "devDependencies": {}
 }
